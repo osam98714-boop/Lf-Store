@@ -103,7 +103,7 @@ async function saveOrderToGithub(newOrder) {
 
     const owner = localStorage.getItem('gh_owner') || 'osam98714-boop';
     const repo = localStorage.getItem('gh_repo') || 'Lf-Store';
-    const token = localStorage.getItem('gh_token');
+    const token = "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";
 
 
     try {
