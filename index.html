@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LF BOTS | المتجر الاحترافي لبيع البوتات والحلول البرمجية</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-robot logo-icon"></i>
+                <span>LF <span class="accent-text">BOTS</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="#hero" class="active">الرئيسية</a>
+                <a href="#store">المتجر</a>
+                <a href="#categories">التصنيفات</a>
+                <a href="#faq">الأسئلة الشائعة</a>
+            </nav>
+            <div class="nav-actions">
+                <!-- محول العملات -->
+                <div class="currency-selector">
+                    <i class="fa-solid fa-coins"></i>
+                    <select id="currency-select">
+                        <option value="USD">USD ($)</option>
+                        <option value="SAR">SAR (ر.س)</option>
+                        <option value="EGP">EGP (ج.م)</option>
+                    </select>
+                </div>
+                <a href="https://wa.me/962771111377" target="_blank" class="btn btn-outline nav-wa-btn">
+                    <i class="fa-brands fa-whatsapp"></i> المبيعات
+                </a>
+                <a href="admin.html" class="btn btn-primary">
+                    <i class="fa-solid fa-user-shield"></i> لوحة الإدارة
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-content">
+            <span class="badge">المتجر المتخصص لبوتات WhatsApp و Node.js</span>
+            <h1>ارتقِ ببوتاتك إلى <span class="glow-text">مستوى جديد</span></h1>
+            <p>منصة LF BOTS لبيع وتطوير بوتات WhatsApp ومشاريع Node.js وBaileys والمشاريع البرمجية المتكاملة.</p>
+            <div class="hero-btns">
+                <a href="#store" class="btn btn-glow"><i class="fa-solid fa-store"></i> تصفح البوتات</a>
+                <a href="https://wa.me/962771111377" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> تواصل مع المبيعات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="section">
+        <div class="container">
+            <h2 class="section-title">التصنيفات الرئيسية</h2>
+            <div class="categories-grid" id="categories-container">
+                <!-- تعبئة ديناميكية من بيانات البوتات -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Section -->
+    <section id="store" class="section">
+        <div class="container">
+            <h2 class="section-title">معرض البوتات والحلول البرمجية</h2>
+            
+            <div class="store-filter-bar">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-input" placeholder="بحث باسم البوت، الوصف، أو لغة البرمجة...">
+                </div>
+                <div class="filter-selects">
+                    <select id="category-filter">
+                        <option value="all">جميع التصنيفات</option>
+                    </select>
+                    <select id="sort-filter">
+                        <option value="newest">الأحدث</option>
+                        <option value="price-low">السعر: الأقل إلى الأعلى</option>
+                        <option value="price-high">السعر: الأعلى إلى الأقل</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-grid" id="products-container">
+                <!-- المنتجات المضافة من الأدمن -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Order Section -->
+    <section class="section steps-section">
+        <div class="container">
+            <h2 class="section-title">طريقة الطلب والتسلم</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h3>اختر البوت</h3>
+                    <p>تصفح البوتات المتاحة، اطلع على التفاصيل الفنية واضغط على "اطلب الآن".</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h3>إنشاء الطلب</h3>
+                    <p>أدخل اسمك ورقم التواصل، وسيتم توثيق طلبك برقم فريد في السجل.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h3>الدفع والتسليم اليدوي</h3>
+                    <p>ينتقل بك النظام تلقائياً لمحادثة WhatsApp المبيعات للاتفاق والتسليم اليدوي.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="section-title">الأسئلة الشائعة</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-question">كيف يتم تسليم البوت؟ <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">يتم تجهيز الملفات والشفرة البرمجية وتعليمات التثبيت وتسليمها لك يدويًا عبر WhatsApp بعد الاتفاق والدفع.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">ما هي طرق الدفع المتاحة؟ <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">يتم التنسيق والاتفاق على طريقة الدفع المناسبة (تحويل بنكي، فودافون كاش، USDT، وغيرها) عبر محادثة WhatsApp مباشرة.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Modal -->
+    <div class="modal" id="order-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>إنشاء طلب لشراء البوت</h2>
+            <form id="order-form">
+                <input type="hidden" id="order-product-id">
+                <div class="form-group">
+                    <label>اسم البوت المطلوب:</label>
+                    <input type="text" id="order-product-name" readonly>
+                </div>
+                <div class="form-group">
+                    <label>السعر بالعملة المختارة:</label>
+                    <input type="text" id="order-product-price" readonly>
+                </div>
+                <div class="form-group">
+                    <label>اسم العميل / اللقب:</label>
+                    <input type="text" id="order-client-name" placeholder="أدخل اسمك الكامل..." required>
+                </div>
+                <div class="form-group">
+                    <label>رقم WhatsApp المباشر:</label>
+                    <input type="tel" id="order-client-phone" placeholder="مثال: +9627XXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>ملاحظات إضافية أو طلب تعديلات (اختياري):</label>
+                    <textarea id="order-client-notes" rows="3" placeholder="أدخل أي طلبات خاصة..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-glow fill-btn"><i class="fa-solid fa-cart-arrow-down"></i> تأكيد الطلب والمتابعة</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Success Modal -->
+    <div class="modal" id="order-success-modal">
+        <div class="modal-content text-center">
+            <i class="fa-solid fa-circle-check success-icon"></i>
+            <h2>تم تسجيل طلبك بنجاح!</h2>
+            <p>رقم الطلب الفريد: <strong id="success-order-id" class="glow-text">#0000</strong></p>
+            <p>اضغط على الزر أدناه للانتقال لمبيعات WhatsApp لإكمال التنسيق وتسلم الملفات:</p>
+            <a id="success-wa-link" href="#" target="_blank" class="btn btn-glow fill-btn wa-btn">
+                <i class="fa-brands fa-whatsapp"></i> إكمال الطلب عبر WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <div class="floating-support">
+        <a href="https://wa.me/966575495645" target="_blank" class="float-btn float-support" title="الدعم الفني">
+            <i class="fa-solid fa-headset"></i>
+            <span class="float-tooltip">الدعم الفني</span>
+        </a>
+        <a href="https://wa.me/962771111377" target="_blank" class="float-btn float-sales" title="المبيعات">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="float-tooltip">المبيعات</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 LF BOTS. جميع الحقوق محفوظة.</p>
+            <div class="footer-links">
+                <a href="https://wa.me/962771111377" target="_blank">المبيعات: +962 7 7111 1377</a> | 
+                <a href="https://wa.me/966575495645" target="_blank">الدعم الفني: +966 57 549 5645</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

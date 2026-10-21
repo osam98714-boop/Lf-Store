@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LF BOTS | لوحة الإدارة الكاملة</title>
+    <link rel="stylesheet" href="admin.style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="login-screen" class="login-container">
+        <div class="login-box">
+            <div class="logo-admin">
+                <i class="fa-solid fa-user-shield"></i>
+                <h2>لوحة الإدارة — LF BOTS</h2>
+            </div>
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label>اسم المستخدم:</label>
+                    <input type="text" id="admin-username" placeholder="أدخل اسم المستخدم..." required>
+                </div>
+                <div class="form-group">
+                    <label>كلمة السر:</label>
+                    <input type="password" id="admin-password" placeholder="أدخل كلمة السر..." required>
+                </div>
+                <button type="submit" class="btn btn-primary fill-btn">تسجيل الدخول</button>
+            </form>
+            <a href="index.html" class="back-to-store"><i class="fa-solid fa-arrow-right"></i> العودة إلى المتجر</a>
+        </div>
+    </div>
+
+    <div id="dashboard-screen" class="dashboard-container hidden">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-robot"></i>
+                <span>LF BOTS Admin</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active" data-tab="tab-stats"><i class="fa-solid fa-chart-pie"></i> الإحصائيات</li>
+                <li data-tab="tab-products"><i class="fa-solid fa-box-open"></i> إدارة المنتجات</li>
+                <li data-tab="tab-settings"><i class="fa-solid fa-cloud-arrow-up"></i> إعدادات الربط السحابي</li>
+                <li data-tab="tab-orders"><i class="fa-solid fa-receipt"></i> إدارة الطلبات</li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="index.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-store"></i> عرض المتجر</a>
+                <button id="logout-btn" class="btn btn-danger btn-sm"><i class="fa-solid fa-right-from-bracket"></i> خروج</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <!-- الإحصائيات -->
+            <div class="tab-page active" id="tab-stats">
+                <h2>الإحصائيات المباشرة</h2>
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <h3>إجمالي البوتات</h3>
+                        <p id="stat-total-products">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>إجمالي الطلبات</h3>
+                        <p id="stat-total-orders">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>الطلبات المدفوعة</h3>
+                        <p id="stat-paid-orders">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- إعدادات GitHub API -->
+            <div class="tab-page" id="tab-settings">
+                <h2>إعدادات التحديث التلقائي للموقع (GitHub API)</h2>
+                <p style="color:var(--text-muted); margin-bottom: 20px;">
+                    أدخل معلومات حسابك على GitHub لتقوم لوحة الإدارة بتحديث ملف <code>products.json</code> في المستودع تلقائياً عند إضافة أي بوت، ليحدث Vercel الموقع فوراً للجميع!
+                </p>
+                <form id="github-settings-form" class="admin-card-form">
+                    <div class="form-group">
+                        <label>اسم المستخدم في GitHub (Owner):</label>
+                        <input type="text" id="gh-owner" value="osam98714-boop" required>
+                    </div>
+                    <div class="form-group">
+                        <label>اسم المستودع (Repository):</label>
+                        <input type="text" id="gh-repo" value="Lf-Store" required>
+                    </div>
+                    <div class="form-group">
+                        <label>رمز الوصول الشخصي (GitHub Personal Access Token):</label>
+                        <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> حفظ إعدادات الربط</button>
+                </form>
+            </div>
+
+            <!-- إضافة منتج -->
+            <div class="tab-page" id="tab-products">
+                <h2>إضافة بوت جديد ورَفعه سحابياً</h2>
+
+                <form id="add-product-form" class="admin-card-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>اسم البوت:</label>
+                            <input type="text" id="prod-name" placeholder="مثال: LF Baileys WhatsApp Bot" required>
+                        </div>
+                        <div class="form-group">
+                            <label>السعر بالدولار ($):</label>
+                            <input type="number" id="prod-price" placeholder="مثال: 49" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>التصنيف:</label>
+                            <input type="text" id="prod-category" placeholder="مثال: WhatsApp Bots" required>
+                        </div>
+                        <div class="form-group">
+                            <label>لغة البرمجة / البيئة:</label>
+                            <input type="text" id="prod-lang" placeholder="مثال: Node.js / Baileys" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>وسم / شارة البوت:</label>
+                            <select id="prod-tag">
+                                <option value="جديد">جديد 🟢</option>
+                                <option value="الأكثر طلباً">الأكثر طلباً 🔥</option>
+                                <option value="مميز">متميز ⭐</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>رابط صورة البوت الحقيقية:</label>
+                            <input type="url" id="prod-img" placeholder="https://..." required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>الوصف والمواصفات الكاملة:</label>
+                        <textarea id="prod-desc" rows="3" placeholder="أدخل الميزات، المتطلبات، وطريقة التشغيل..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-glow" id="save-prod-btn">
+                        <i class="fa-solid fa-cloud-arrow-up"></i> حفظ وإرسال التحديث إلى GitHub & Vercel
+                    </button>
+                </form>
+
+                <h3 style="margin-top: 30px;">البوتات المعروضة حالياً</h3>
+                <div id="admin-products-table" class="table-responsive"></div>
+            </div>
+
+            <!-- إدارة الطلبات -->
+            <div class="tab-page" id="tab-orders">
+                <h2>إدارة الطلبات</h2>
+                <div id="admin-orders-table" class="table-responsive"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.script.js"></script>
+</body>
+</html>
